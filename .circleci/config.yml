@@ -10,9 +10,8 @@ jobs:
           environment:
             AWS_DEFAULT_REGION: ap-southeast-2
             CONSUL_DOWNLOAD_URL: https://s3-us-west-2.amazonaws.com/hc-enterprise-binaries/consul/ent/1.4.0/consul-enterprise_1.4.0%2Bent_linux_amd64.zip
-          working_directory: examples/consul-ami
           command: |
-                    packer build consul.json
+                    packer build /examples/consul-ami/consul.json
       - run:
           name: Print the Current Time
           command: date
