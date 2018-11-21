@@ -44,17 +44,17 @@
   }],
   "provisioners": [{
     "type": "file",
-    "source": "{{template_dir}}/../../../terraform-aws-consul",
+    "source": "{{template_dir}}/../../modules",
     "destination": "/tmp"
   },{
     "type": "shell",
     "inline": [
       "if test -n \"{{user `download_url`}}\"; then",
-      " /tmp/terraform-aws-consul/modules/install-consul/install-consul --download-url {{user `download_url`}};",
+      " /tmp/modules/install-consul/install-consul --download-url {{user `download_url`}};",
       "else",
-      " /tmp/terraform-aws-consul/modules/install-consul/install-consul --version {{user `consul_version`}};",
+      " /tmp/modules/install-consul/install-consul --version {{user `consul_version`}};",
       "fi",
-      "/tmp/terraform-aws-consul/modules/install-dnsmasq/install-dnsmasq"
+      "/tmp/modules/install-dnsmasq/install-dnsmasq"
     ],
     "pause_before": "30s"
   }]
