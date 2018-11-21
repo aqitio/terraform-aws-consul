@@ -1,8 +1,8 @@
 {
   "min_packer_version": "0.12.0",
   "variables": {
-    "aws_region": "us-east-1",
-    "consul_version": "1.2.2",
+    "aws_region": "{{env `AWS_REGION`}}"
+    "consul_version": "{{env `CONSUL_VERSION`}}",
     "download_url": "{{env `CONSUL_DOWNLOAD_URL`}}"
   },
   "builders": [{
