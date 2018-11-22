@@ -1,12 +1,13 @@
 {
   "min_packer_version": "0.12.0",
   "variables": {
+    "release_version": "{{env `RELEASE_VERSION`}}",
     "consul_version": "{{env `CONSUL_VERSION`}}",
     "download_url": "{{env `CONSUL_DOWNLOAD_URL`}}"
   },
   "builders": [{
     "name": "ubuntu16-ami",
-    "ami_name": "ConsulEnt-{{user `consul_version`}}-RHall",
+    "ami_name": "ConsulEnt-{{user `consul_version`}}-{{user `release_version`}}",
     "ami_description": "An Ubuntu 16.04 AMI that has Consul installed.",
     "instance_type": "t2.micro",
     "region": "{{user `aws_region`}}",
