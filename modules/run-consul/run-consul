@@ -232,7 +232,7 @@ function generate_consul_config {
   local instance_id=""
   local instance_ip_address=""
   local instance_region=""
-  local ui="false"
+  local ui="true"
 
   instance_id=$(get_instance_id)
   instance_ip_address=$(get_instance_ip_address)
